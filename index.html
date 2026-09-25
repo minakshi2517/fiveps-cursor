@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FivePS — Driven by data. Powered by creativity.</title>
+  <meta name="description" content="FivePS is a marketing studio across strategy, creative, content, design, and product.">
+  <meta name="theme-color" content="#f3efe8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="pill" href="#services"><span class="star" aria-hidden="true">✦</span> services</a>
+    <a class="mark" href="#top">FivePS</a>
+    <a class="bubble" href="#contact" aria-label="Contact">✉</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2000&q=80" alt="">
+      <div class="hero-shade"></div>
+      <h1>
+        <span>we make <i>marketing</i> for</span>
+        <span>brands that <em>want proof.</em></span>
+      </h1>
+    </section>
+
+    <section class="runway" aria-label="Position">
+      <div class="runway-sticky">
+        <p class="giant" id="giant">we wanna be where the people are</p>
+        <p class="aside">Audiences are scattered, and more reachable than ever. We help brands show up where people actually are — then prove that it worked.</p>
+      </div>
+    </section>
+
+    <section class="future">
+      <h2>an agency built<br>for the work, <i>from strategy to ship.</i></h2>
+      <p>To move a brand you need more than one channel. FivePS works the whole span: social and performance, sites and products, film, and the strategy that decides what comes first.</p>
+    </section>
+
+    <section class="beliefs">
+      <p>data is not the opposite of taste</p>
+      <p>loud is not the same as clear</p>
+      <p>a menu is not a studio</p>
+    </section>
+
+    <section class="stage">
+      <div class="fan">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="">
+      </div>
+      <h2>we are one studio across five practices. <i>not five vendors.</i></h2>
+    </section>
+
+    <section class="need" id="services">
+      <h2>call us if you <i>need:</i></h2>
+      <div class="deck">
+        <article class="slip s1">
+          <h3>marketing</h3>
+          <ul>
+            <li>Social</li>
+            <li>Performance</li>
+            <li>Content</li>
+            <li>Ads</li>
+            <li>Leads</li>
+          </ul>
+        </article>
+        <article class="slip s2">
+          <h3>development</h3>
+          <ul>
+            <li>Web</li>
+            <li>E-commerce</li>
+            <li>Apps</li>
+            <li>Custom products</li>
+          </ul>
+        </article>
+        <article class="slip s3">
+          <h3>design</h3>
+          <ul>
+            <li>Branding</li>
+            <li>UI/UX</li>
+            <li>Web</li>
+            <li>App</li>
+            <li>3D</li>
+          </ul>
+        </article>
+        <article class="slip s4">
+          <h3>content</h3>
+          <ul>
+            <li>Photography</li>
+            <li>Video</li>
+            <li>Editing</li>
+            <li>Campaigns</li>
+          </ul>
+        </article>
+        <article class="slip s5">
+          <h3>strategy</h3>
+          <ul>
+            <li>Brand strategy</li>
+            <li>SEO</li>
+            <li>Analytics</li>
+            <li>Digital strategy</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="close" id="contact">
+      <div class="panel">
+        <div class="cols">
+          <div>
+            <p class="tag">start</p>
+            <a href="mailto:hello@fiveps.com">hello@fiveps.com</a>
+            <p class="fine">Tell us the problem. We’ll say which practice it starts in.</p>
+          </div>
+          <div>
+            <p class="tag">practices</p>
+            <p class="list">Marketing<br>Development<br>Design<br>Content<br>Strategy</p>
+          </div>
+          <div>
+            <p class="tag">line</p>
+            <p class="list">Driven by data.<br>Powered by creativity.</p>
+          </div>
+        </div>
+        <p class="giant-mark" aria-hidden="true">FivePS</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const giant = document.querySelector("#giant");
+    const runway = document.querySelector(".runway");
+    const onScroll = () => {
+      const rect = runway.getBoundingClientRect();
+      const total = rect.height - innerHeight;
+      const p = Math.min(1, Math.max(0, -rect.top / total));
+      giant.style.transform = "translateX(" + (-8 - p * 42) + "%)";
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+</body>
+</html>

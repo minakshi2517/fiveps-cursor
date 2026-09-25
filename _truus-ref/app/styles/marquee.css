@@ -1,0 +1,491 @@
+/* ─── Proud to work with — horizontal logo strip ─────────────────────────── */
+.client-band-section {
+    background-color: var(--bg-color);
+    padding: 72px 0 56px;
+    position: relative;
+    z-index: 2;
+}
+
+.client-band__title {
+    margin: 0 0 28px;
+    padding-left: 64px;
+    text-align: left;
+    font-family: 'Times New Roman', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    white-space: nowrap;
+    color: #003153;
+}
+
+.client-band__rail {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.client-band__meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: -18px 0 28px;
+    padding-left: 64px;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #367588;
+}
+
+.client-band__meta span {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.95rem;
+    color: #003153;
+}
+
+.client-band__rail--left {
+    border: 0;
+    background: #003153;
+}
+
+.client-band__rail--right {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.client-band__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 8px 0;
+}
+
+.client-band__track--left {
+    animation: client-band-left 90s linear infinite;
+}
+
+.client-band__track--right {
+    animation: client-band-right 46s linear infinite;
+}
+
+.client-band:hover .client-band__track {
+    animation-play-state: paused;
+}
+
+.client-band__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 28px;
+    position: relative;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.client-band__track:hover .client-band__logo {
+    opacity: 0.32;
+}
+
+.client-band__track:hover .client-band__logo:hover {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.client-band__logo img {
+    display: block;
+    width: auto;
+    height: 36px;
+    max-width: 148px;
+    object-fit: contain;
+}
+
+.client-band__logo--light img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.client-band__logo::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 16px;
+    background: rgba(225, 235, 238, 0.28);
+    transform: translateY(-50%);
+}
+
+.client-band__logo--tata {
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-size: 0.95rem;
+}
+
+.client-band__logo--tata::before {
+    content: "";
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
+    border: 1.5px solid #111;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 58%, #111 59% 66%, transparent 67%),
+        linear-gradient(#111, #111) center / 10px 1.5px no-repeat;
+}
+
+.client-band__logo--infosys {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
+}
+
+.client-band__logo--loreal {
+    letter-spacing: 0.14em;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.client-band__logo--adidas {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    font-size: 1.55rem;
+}
+
+.client-band__logo--samsung {
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.client-band__logo--zepto {
+    font-weight: 750;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    font-size: 1.7rem;
+}
+
+.client-band__logo--hdfc {
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    font-weight: 800;
+    gap: 8px;
+}
+
+.hdfc-sq {
+    width: 16px;
+    height: 16px;
+    background: #004c8f;
+    border-radius: 2px;
+    box-shadow: inset 5px 5px 0 #e31e24;
+}
+
+.g-letters span:nth-child(1) { color: #4285f4; }
+.g-letters span:nth-child(2) { color: #ea4335; }
+.g-letters span:nth-child(3) { color: #fbbc05; }
+.g-letters span:nth-child(4) { color: #4285f4; }
+.g-letters span:nth-child(5) { color: #34a853; }
+.g-letters span:nth-child(6) { color: #ea4335; }
+.g-letters { font-weight: 500; letter-spacing: -0.04em; font-size: 1.55rem; }
+
+.client-band__logo--diageo {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.35rem;
+}
+
+.client-band__logo--zomato {
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    font-size: 1.55rem;
+}
+
+.client-band__logo--flipkart {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-size: 1.45rem;
+}
+
+.client-band__logo--oyo {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-size: 1.45rem;
+}
+
+.client-band__logo--oyo::first-letter {
+    color: #ee2e24;
+}
+
+@keyframes client-band-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes client-band-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .client-band__track { animation: none; }
+}
+
+@media (max-width: 700px) {
+    .client-band__title {
+        white-space: normal;
+        padding: 0 24px;
+    }
+    .client-band__logo {
+        font-size: 1.35rem;
+    }
+}
+
+/* ─── Double Marquee Section ─────────────────────────────────────────────── */
+.Double-marquee {
+    background-color: var(--bg-color);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    min-height: 100vh;
+}
+
+/* ─── Left Panel ─────────────────────────────────────────────────────────── */
+.marquee-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+.marquee-text-container {
+    position: relative;
+    z-index: 5;
+    text-align: left;
+}
+
+.marquee-left h2 {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 4rem;
+    font-weight: 1000;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: var(--color-black);
+    margin-bottom: 120px;
+    margin-right: 50px;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.text-with {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+}
+
+.marquee-underline {
+    position: absolute;
+    top: 7.5rem;
+    right: 7.8rem;
+    width: 100px;
+    height: auto;
+    color: var(--color-black);
+    z-index: 6;
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: left;
+}
+
+/* ─── Blob + Decorative SVGs ─────────────────────────────────────────────── */
+.marquee-blob-container {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 500px;
+    z-index: 1;
+}
+
+.marquee-blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.marquee-svg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-svg-item {
+    position: absolute;
+}
+
+.marquee-svg-item:nth-child(1) {
+    bottom: 18%;
+    left: 68%;
+    width: 90px;
+    height: auto;
+    transform: translateX(-50%) scale(0) rotate(-20deg);
+    opacity: 0;
+    z-index: 2;
+}
+
+.marquee-svg-item:nth-child(2) {
+    bottom: 3%;
+    left: 70%;
+    width: 350px;
+    height: auto;
+    color: var(--color-dark);
+    transform: rotate(190deg) scaleX(-1);
+    z-index: 1;
+}
+
+.marquee-svg-item:nth-child(2) path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+/* ─── Right Panel — Scrolling Columns ────────────────────────────────────── */
+.marquee-right {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 5px;
+    height: 850px;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    margin-right: 80px;
+}
+
+.marquee-column {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee-column::before,
+.marquee-column::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-column::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg-color) 0%, transparent 100%);
+}
+
+.marquee-column::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--bg-color) 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee-column:nth-child(1) .marquee-track {
+    animation: marqueeUp 22s linear infinite;
+}
+
+.marquee-column:nth-child(2) .marquee-track {
+    animation: marqueeDown 22s linear infinite;
+}
+
+@keyframes marqueeUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes marqueeDown {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ─── Marquee Items ──────────────────────────────────────────────────────── */
+.marquee-item {
+    width: 90%;
+    height: 240px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Legacy theme attributes (kept for compatibility) */
+.marquee-item[data-logo-theme="a"] {
+    background-color: #a52a5f;
+}
+
+.marquee-item[data-logo-theme="b"] {
+    background-color: var(--color-darkblue);
+}
+
+.marquee-item[data-logo-theme="c"] {
+    background-color: #ff6b4a;
+}
+
+.marquee-item[data-logo-theme="d"] {
+    background-color: var(--color-green);
+}
+
+.marquee-logo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-logo__before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
