@@ -1,39 +1,28 @@
-import Link from 'next/link';
 import { POSTS } from '@/lib/pages';
+import BlogIndex from '@/components/BlogIndex';
+import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export const metadata = { title: 'Blog — FivePS' };
 
 export default function BlogPage() {
-    const featured = POSTS.find((post) => post.featured);
-    const rest = POSTS.filter((post) => !post.featured);
     return (
-        <main className="page">
-            <header className="page__intro">
-                <p className="page__kicker">Notes</p>
-                <h1>The FivePS note.</h1>
-                <p className="page__lead">The shelf is built. The articles below are placeholders, marked so they are not read as published work.</p>
-            </header>
-            <section className="blog-feature">
-                <Link href={`/blog/${featured.slug}`}>
-                    <div className="blog-feature__copy">
-                        <span className="stamp">{featured.category}</span>
-                        <h2>{featured.title}</h2>
-                        <p>{featured.excerpt}</p>
-                        <p>{featured.date} · {featured.time}</p>
-                    </div>
-                    <div />
-                </Link>
-            </section>
-            <section className="blog-list">
-                {rest.map((post) => (
-                    <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
-                        <span className="stamp">{post.category}</span>
-                        <h2>{post.title}</h2>
-                        <p>{post.excerpt}</p>
-                        <p>{post.date} · {post.time}</p>
+        <>
+            <main className="note">
+                <BlogIndex posts={POSTS} />
+                <section className="note-cta">
+                    <p className="note-kicker">Next</p>
+                    <h2>Let’s make something.</h2>
+                    <p>Have a project in mind? Let’s talk.</p>
+                    <Link href="/contact" className="note-cta__go">
+                        Start a project
+                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </Link>
-                ))}
-            </section>
-        </main>
+                </section>
+            </main>
+            <Footer />
+        </>
     );
 }

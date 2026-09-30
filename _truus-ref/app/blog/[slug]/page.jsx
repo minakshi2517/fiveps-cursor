@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { POSTS } from '@/lib/pages';
+import Footer from '@/components/Footer';
 
 export function generateStaticParams() {
     return POSTS.map((post) => ({ slug: post.slug }));
@@ -14,16 +15,31 @@ export async function generateMetadata({ params }) {
 
 export default async function ArticlePage({ params }) {
     const { slug } = await params;
-    const post = POSTS.find((item) => item.slug === slug);
+    const index = POSTS.findIndex((item) => item.slug === slug);
+    const post = POSTS[index];
     if (!post) notFound();
+    const next = POSTS[(index + 1) % POSTS.length];
     return (
-        <article className="article">
-            <p className="page__kicker">{post.category}</p>
-            <h1>{post.title}</h1>
-            <p>{post.date} · {post.time}</p>
-            <p>{post.excerpt}</p>
-            <p>This page is the article layout. The body is empty on purpose until a real note is written.</p>
-            <p><Link href="/blog">Back to the notes</Link></p>
-        </article>
+        <>
+            <article className="note-piece">
+                <Link href="/blog" className="note-piece__back">← Blog</Link>
+                <p className="note-kicker">{post.category} · {post.time}</p>
+                <h1>{post.title}</h1>
+                <p className="note-piece__lead">{post.excerpt}</p>
+                {post.cover && (
+                    <figure className="note-piece__cover">
+                        <img src={post.cover} alt="" />
+                    </figure>
+                )}
+                <div className="note-piece__body">
+                    {post.body.map((p) => <p key={p}>{p}</p>)}
+                </div>
+                <nav>
+                    <Link href="/blog">All notes</Link>
+                    <Link href={`/blog/${next.slug}`}>{next.title} →</Link>
+                </nav>
+            </article>
+            <Footer />
+        </>
     );
 }

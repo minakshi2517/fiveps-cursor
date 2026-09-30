@@ -8,6 +8,7 @@ const LINKS = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
     { href: '/portfolio', label: 'Portfolio' },
+    { href: '/case-study', label: 'Case Study' },
     { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
@@ -15,6 +16,10 @@ const LINKS = [
 
 function isActive(pathname, href) {
     if (href === '/') return pathname === '/';
+    if (href === '/case-study') {
+        return pathname === '/case-study' || pathname.startsWith('/case-study/') || pathname.startsWith('/portfolio/');
+    }
+    if (href === '/portfolio') return pathname === '/portfolio';
     return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -40,6 +45,8 @@ export default function Navbar() {
     useEffect(() => {
         setOpen(false);
     }, [pathname]);
+
+    if (pathname === '/services') return null;
 
     return (
         <nav className={`site-nav${onDark ? ' is-dark' : ''}${open ? ' is-open' : ''}`}>

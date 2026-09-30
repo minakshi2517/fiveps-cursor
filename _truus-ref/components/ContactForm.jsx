@@ -1,13 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const EMPTY = { name: '', email: '', company: '', service: '', message: '' };
+const EMPTY = { name: '', email: '', phone: '', company: '', service: '', message: '' };
 
-export default function ContactForm() {
-    const [values, setValues] = useState(EMPTY);
+export default function ContactForm({ seed = '' }) {
+    const [values, setValues] = useState({ ...EMPTY, message: seed });
     const [errors, setErrors] = useState({});
     const [sent, setSent] = useState(false);
+
+    useEffect(() => {
+        if (seed) setValues((current) => ({ ...current, message: seed }));
+    }, [seed]);
 
     const onChange = (event) => {
         const { name, value } = event.target;
@@ -32,18 +36,26 @@ export default function ContactForm() {
     }
 
     return (
-        <form className="contact-form" onSubmit={onSubmit} noValidate>
-            <label>Name
-                <input name="name" value={values.name} onChange={onChange} className={errors.name ? 'is-bad' : ''} />
-            </label>
-            {errors.name && <p className="form-error">{errors.name}</p>}
-            <label>Email
-                <input name="email" type="email" value={values.email} onChange={onChange} className={errors.email ? 'is-bad' : ''} />
-            </label>
-            {errors.email && <p className="form-error">{errors.email}</p>}
-            <label>Company
-                <input name="company" value={values.company} onChange={onChange} />
-            </label>
+        <form className="contact-form" id="ask-form" onSubmit={onSubmit} noValidate>
+            <p className="contact-form__title">Please enter your information</p>
+            <div className="contact-form__row">
+                <label>Full name
+                    <input name="name" placeholder="Enter full name" value={values.name} onChange={onChange} className={errors.name ? 'is-bad' : ''} />
+                    {errors.name && <span className="form-error">{errors.name}</span>}
+                </label>
+                <label>Email
+                    <input name="email" type="email" placeholder="Enter email" value={values.email} onChange={onChange} className={errors.email ? 'is-bad' : ''} />
+                    {errors.email && <span className="form-error">{errors.email}</span>}
+                </label>
+            </div>
+            <div className="contact-form__row">
+                <label>Phone
+                    <input name="phone" type="tel" placeholder="Enter phone number" value={values.phone} onChange={onChange} />
+                </label>
+                <label>Company
+                    <input name="company" placeholder="Enter company" value={values.company} onChange={onChange} />
+                </label>
+            </div>
             <label>Service
                 <select name="service" value={values.service} onChange={onChange} className={errors.service ? 'is-bad' : ''}>
                     <option value="">Choose</option>
@@ -53,12 +65,12 @@ export default function ContactForm() {
                     <option>Web Development</option>
                     <option>Automation</option>
                 </select>
+                {errors.service && <span className="form-error">{errors.service}</span>}
             </label>
-            {errors.service && <p className="form-error">{errors.service}</p>}
             <label>Message
-                <textarea name="message" rows={5} value={values.message} onChange={onChange} className={errors.message ? 'is-bad' : ''} />
+                <textarea name="message" rows={5} placeholder="Enter your message here…" value={values.message} onChange={onChange} className={errors.message ? 'is-bad' : ''} />
+                {errors.message && <span className="form-error">{errors.message}</span>}
             </label>
-            {errors.message && <p className="form-error">{errors.message}</p>}
             <button type="submit">Send the brief</button>
         </form>
     );

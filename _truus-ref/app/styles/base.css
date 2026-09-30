@@ -58,7 +58,7 @@ body {
     background-color: var(--bg-color);
     font-family: 'Epilogue', sans-serif;
     color: var(--color-dark);
-    overflow-x: hidden;
+    overflow-x: clip;
     scrollbar-width: none;
     -ms-overflow-style: none;
     cursor: url("/assets/Cursor SVG/cursor-default.svg") 2 0, auto;
@@ -67,6 +67,7 @@ body {
 html {
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: clip;
 }
 
 html::-webkit-scrollbar,

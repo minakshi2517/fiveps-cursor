@@ -34,7 +34,7 @@
     padding-left: 64px;
     font-family: 'Epilogue', sans-serif;
     font-size: 0.68rem;
-    font-weight: 650;
+    font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #367588;
@@ -167,7 +167,7 @@
 }
 
 .client-band__logo--zepto {
-    font-weight: 750;
+    font-weight: 700;
     letter-spacing: -0.05em;
     text-transform: lowercase;
     font-size: 1.7rem;

@@ -60,9 +60,7 @@ export default function Home() {
             <section className="service-cards-wrapper">
                 <ServiceCards />
             </section>
-            <footer className="main-footer">
-                <Footer />
-            </footer>
+            <Footer />
         </>
     );
 }

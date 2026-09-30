@@ -28,4 +28,6 @@
 @import './styles/responsive.css';
 @import './styles/clean.css';
 @import './styles/pages.css';
+@import './styles/_inner-pages-append.css';
+@import './styles/about-page.css';
 /* All media queries (tablet + mobile)      */
