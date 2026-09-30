@@ -4,8 +4,8 @@
 .vimeo-hero {
     position: relative;
     width: calc(100% - 24px);
-    height: calc(100vh - 24px);
-    margin: 12px auto;
+    height: calc(100vh - 104px);
+    margin: 92px auto 12px;
     overflow: hidden;
     background-color: var(--color-black-soft);
     border-radius: 24px;

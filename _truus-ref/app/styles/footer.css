@@ -5,9 +5,10 @@
 }
 
 .site-footer {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--paper);
+    color: var(--ink);
     padding: 0 var(--page-pad);
+    border-top: 1px solid var(--line);
 }
 
 .site-footer__cta {
@@ -16,7 +17,7 @@
     justify-content: space-between;
     gap: 24px;
     padding: 56px 0 36px;
-    border-bottom: 1px solid rgba(225, 235, 238, 0.14);
+    border-bottom: 1px solid var(--line);
 }
 
 .site-footer__kicker {
@@ -26,7 +27,7 @@
     font-weight: 700;
     letter-spacing: var(--ls-kicker);
     text-transform: uppercase;
-    color: var(--yellow);
+    color: var(--muted);
 }
 
 .site-footer__cta-title {
@@ -71,13 +72,15 @@
 .site-footer__mark {
     margin: 0 0 14px;
     line-height: 0;
+    background: none;
 }
 
 .site-footer__mark img {
     display: block;
-    height: 88px;
+    height: 72px;
     width: auto;
     max-width: 100%;
+    object-fit: contain;
 }
 
 .site-footer__line {
@@ -85,13 +88,13 @@
     max-width: 28rem;
     font-size: 0.98rem;
     line-height: 1.5;
-    color: rgba(225, 235, 238, 0.72);
+    color: var(--muted);
 }
 
 .site-footer__mail,
 .site-footer__phone {
     display: block;
-    color: var(--paper);
+    color: var(--ink);
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.05rem;
@@ -101,13 +104,13 @@
 
 .site-footer__mail:hover,
 .site-footer__phone:hover {
-    color: var(--yellow);
+    color: var(--navy);
 }
 
 .site-footer__hours {
     margin: 8px 0 0;
     font-size: 0.82rem;
-    color: rgba(225, 235, 238, 0.5);
+    color: var(--muted);
 }
 
 .site-footer__col p,
@@ -118,14 +121,14 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(225, 235, 238, 0.45);
+    color: var(--muted);
 }
 
 .site-footer__col a,
 .site-footer nav a {
     display: block;
     margin: 0 0 9px;
-    color: rgba(225, 235, 238, 0.88);
+    color: var(--ink);
     font-size: 0.95rem;
     text-decoration: none;
     transition: color var(--t-micro) var(--ease);
@@ -133,7 +136,7 @@
 
 .site-footer__col a:hover,
 .site-footer nav a:hover {
-    color: var(--yellow);
+    color: var(--navy);
 }
 
 .site-footer address {
@@ -143,12 +146,12 @@
     font-style: normal;
     font-size: 0.9rem;
     line-height: 1.45;
-    color: rgba(225, 235, 238, 0.72);
+    color: var(--muted);
 }
 
 .site-footer address strong {
     margin-bottom: 4px;
-    color: var(--paper);
+    color: var(--ink);
     font-family: var(--font-display);
     font-size: 0.98rem;
 }
@@ -160,7 +163,7 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--yellow);
+    color: var(--navy);
 }
 
 .site-footer__bar {
@@ -168,10 +171,10 @@
     justify-content: space-between;
     gap: 16px;
     padding: 20px 0 28px;
-    border-top: 1px solid rgba(225, 235, 238, 0.14);
+    border-top: 1px solid var(--line);
     font-size: 0.78rem;
     letter-spacing: 0.04em;
-    color: rgba(225, 235, 238, 0.62);
+    color: var(--muted);
 }
 
 .site-footer__bar p {

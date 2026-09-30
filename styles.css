@@ -68,6 +68,7 @@ a { color: inherit; }
 
 .mark {
   line-height: 0;
+  justify-self: center;
 }
 
 .mark img {

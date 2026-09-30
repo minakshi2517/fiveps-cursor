@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="site-footer__grid">
                 <div className="site-footer__brand">
                     <p className="site-footer__mark">
-                        <img src="/fiveps-logo.png" alt="FivePS" />
+                        <img src="/fiveps-mark.png" alt="FivePS" />
                     </p>
                     <p className="site-footer__line">
                         Making brands internet-worthy. Strategy, ads, content, design, and websites — from one agency.
