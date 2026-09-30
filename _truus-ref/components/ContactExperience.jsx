@@ -9,15 +9,15 @@ const PHONE = '+919350612825';
 const PHONE_SHOW = '+91 93506 12825';
 
 const POINTS = [
-    ['One founder. One roof.', 'The brief goes to the person who built the studio — not a pile of partners.'],
+    ['One founder. One roof.', 'The brief goes to the person who built the agency — not a pile of partners.'],
     ['Direct & clear.', 'We reply with how we would approach it, what it includes, and when it can start.'],
-    ['The work sits here.', 'Strategy, design, film, the site and the follow-up. One studio.'],
+    ['The work sits here.', 'Strategy, ads, content, design and websites. One agency.'],
 ];
 
 const PLACES = [
     {
         city: 'Rewari',
-        tag: 'Studio',
+        tag: 'HQ',
         lines: ['SCO A-03, 1st Floor', 'Above Suncity Projects Office', 'Sector 6, Suncity, Rewari 123401'],
         map: 'https://maps.google.com/maps?q=Suncity%20Rewari%20Haryana%20123401&z=15&output=embed',
         open: 'https://www.google.com/maps/search/?api=1&query=Suncity+Rewari+Haryana+123401',
@@ -67,7 +67,7 @@ export default function ContactExperience() {
                     <form className="ask-help__bar" onSubmit={onAsk}>
                         <input
                             type="text"
-                            placeholder="Ask the studio anything…"
+                            placeholder="Ask the agency anything…"
                             value={ask}
                             onChange={(e) => setAsk(e.target.value)}
                         />
@@ -82,12 +82,12 @@ export default function ContactExperience() {
                     <h1>
                         Talk to the
                         <br />
-                        studio
+                        agency
                         <br />
                         <em>today.</em>
                     </h1>
                     <p className="ask-lead">
-                        Get in touch with the studio for any brief — one founder, one company.
+                        Get in touch with the agency for any brief — one founder, one company.
                         We reply with the approach, what’s in it, and when it can start.
                     </p>
                     <ul className="ask-points">
@@ -111,7 +111,7 @@ export default function ContactExperience() {
                     <h2>Where FivePS sits.</h2>
                 </header>
                 <div className="ask-loc">
-                    <div className="ask-loc__list" role="tablist" aria-label="Studios">
+                    <div className="ask-loc__list" role="tablist" aria-label="Offices">
                         {PLACES.map((place, i) => (
                             <button
                                 key={place.city}

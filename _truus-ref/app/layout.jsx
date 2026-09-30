@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 
 export const metadata = {
     title: 'FivePS — We make marketing for the new mainstream',
-    description: 'FivePS is a marketing studio across strategy, creative, content, design, and product.',
+    description: 'FivePS is a digital marketing agency across strategy, ads, content, design, and websites.',
     icons: {
         icon: 'https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/68381362603d6402ee03c00e_favicon.png',
     },

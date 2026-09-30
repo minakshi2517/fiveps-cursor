@@ -70,10 +70,14 @@
 
 .site-footer__mark {
     margin: 0 0 14px;
-    font-family: var(--font-accent);
-    font-weight: 700;
-    font-size: 2.4rem;
-    line-height: 1;
+    line-height: 0;
+}
+
+.site-footer__mark img {
+    display: block;
+    height: 88px;
+    width: auto;
+    max-width: 100%;
 }
 
 .site-footer__line {

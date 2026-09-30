@@ -9,7 +9,7 @@ const QUESTIONS = [
     },
     {
         q: 'What services do you offer?',
-        a: 'Marketing, development, design, content, and strategy. Social, performance, sites, apps, brand, film, and the plan that holds them together.',
+        a: 'Digital marketing, ads, social, content, design, websites, and automation. Social, performance, sites, brand, video, and the plan that holds them together.',
     },
     {
         q: 'How long does a typical project take?',

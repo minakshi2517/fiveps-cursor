@@ -59,7 +59,7 @@ export default function ContactForm({ seed = '' }) {
             <label>Service
                 <select name="service" value={values.service} onChange={onChange} className={errors.service ? 'is-bad' : ''}>
                     <option value="">Choose</option>
-                    <option>Marketing</option>
+                    <option>Digital Marketing</option>
                     <option>Design</option>
                     <option>Video Production</option>
                     <option>Web Development</option>

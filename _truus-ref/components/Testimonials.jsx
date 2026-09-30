@@ -12,7 +12,7 @@ const NOTES = [
     {
         role: 'Founder',
         context: 'A brand rebuild',
-        quote: 'Strategy first, then the film, the site, and the ads. Nothing felt bolted on at the end.',
+        quote: 'Strategy first, then the content, the site, and the ads. Nothing felt bolted on at the end.',
         color: '#7a4eab',
         tilt: '6deg',
         image: 'https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e607142a7a25157d9dd_1875b9852ca289170917f9060c95b6a4_BolpuntJapie.avif',
@@ -28,7 +28,7 @@ const NOTES = [
     {
         role: 'Creative director',
         context: 'A content series',
-        quote: 'The photos, the edit, and the posts felt like one idea. People actually sent the film around.',
+        quote: 'The photos, the edit, and the posts felt like one idea. People actually sent the reel around.',
         color: '#6d7344',
         tilt: '8deg',
         image: 'https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e607d351d1335f06e04_f1aafb2150d81c3990c906d901d2e7e4_Esprix.avif',

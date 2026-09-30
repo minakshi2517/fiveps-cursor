@@ -30,7 +30,7 @@ export default function ServiceCards() {
       {/* ─── "Call us if you need:" Heading ─── */}
       <div className="title-container">
         <h2 className="main-title">
-          call us if you <span className="italic-text">need:</span>
+          Call us if you <span className="italic-text">need:</span>
         </h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"

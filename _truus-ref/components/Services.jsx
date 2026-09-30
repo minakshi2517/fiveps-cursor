@@ -57,11 +57,11 @@ export default function Services() {
         <section className="services" id="services" aria-labelledby="services-title" ref={rootRef}>
             <div className="services__split">
                 <div className="services__copy">
-                    <p className="services__kicker">what we do</p>
-                    <h2 id="services-title" className="services__title">services</h2>
+                    <p className="services__kicker">What we do</p>
+                    <h2 id="services-title" className="services__title">Services</h2>
                     <p>
                         FivePS takes a brand from the first idea to the thing people actually see.
-                        Strategy, design, film, the site, and the follow-up sit with one team,
+                        Strategy, ads, content, design and websites sit with one team,
                         so the work feels like one piece instead of five vendors taped together.
                     </p>
                     <a href="mailto:hello@fiveps.com">Start a project</a>

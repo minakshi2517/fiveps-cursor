@@ -45,18 +45,18 @@ export default function MotionCards() {
             {/* ─── Part 1: Bold Heading Text with SVG Sticker Placeholders ─── */}
             <div className="motion-card__heading">
                 <h2 className="motion-card__title">
-                    an agency built for the future.
+                    An agency built for the future.
                 </h2>
                 <p className="motion-card__subtitle">
-                    from strategy to standout.
+                    From strategy to standout.
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 634 28" fill="none" className="motion-card__underline-svg">
                     <path className="motion-card__underline-path" d="M2 26C41.0237 23.1556 79.9927 19.9419 118.634 15.5521C169.106 9.98633 227.314 2.42393 275.206 2C280.46 2.57436 264.768 4.99488 262.462 5.55556C257.837 6.43078 252.529 7.47009 247.317 8.59146C239.594 10.3556 212.496 15.8393 226.932 19.8051C239.594 22.6359 263.663 21.9521 280.978 21.3504C314.817 19.9829 349.311 16.7419 383.204 14.7863C465.931 9.5077 549.191 10.547 632 14.1436" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
 
-            <p className="agency-stats__kicker">by the numbers</p>
-            <ul className="agency-stats" aria-label="Studio stats">
+            <p className="agency-stats__kicker">By the numbers</p>
+            <ul className="agency-stats" aria-label="Agency stats">
                 <li>
                     <span className="agency-stats__icon" aria-hidden="true" />
                     <span className="agency-stats__num">200+</span>
@@ -193,13 +193,13 @@ export function MotionWork() {
                 {/* Floating labels — positioned freely over the cards area */}
                 <div ref={containerRef} className="motion-card__floating-labels">
                     <div className="motion-card__floating-label motion-card__floating-label--pink">
-                        <p className="motion-card__floating-text">girls just wanna have fun!</p>
+                        <p className="motion-card__floating-text">Girls just wanna have fun!</p>
                     </div>
                     <div className="motion-card__floating-label motion-card__floating-label--orange">
-                        <p className="motion-card__floating-text">mainstream is not a dirty word</p>
+                        <p className="motion-card__floating-text">Mainstream is not a dirty word</p>
                     </div>
                     <div className="motion-card__floating-label motion-card__floating-label--red">
-                        <p className="motion-card__floating-text">arrogance = old fashioned</p>
+                        <p className="motion-card__floating-text">Arrogance = old fashioned</p>
                     </div>
                 </div>
             </div>

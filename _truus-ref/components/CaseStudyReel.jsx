@@ -7,9 +7,9 @@ import { CASES } from '@/lib/pages';
 
 const TICK = [
     ...CASES.map((item) => item.title),
-    'the brief',
-    'what we made',
-    'the file',
+    'The brief',
+    'What we made',
+    'The file',
 ];
 
 const POINTS = [
@@ -83,29 +83,23 @@ export default function CaseStudyReel() {
 
     return (
         <div className="csf" ref={root}>
-            <section className="abo-hero">
-                <i className="abo-blob abo-blob--cream" aria-hidden="true" />
-                <i className="abo-blob abo-blob--yellow" aria-hidden="true" />
-                <i className="abo-blob abo-blob--ring" aria-hidden="true" />
-                <p className="services__kicker craft-in">case studies</p>
+            <section className="abo-hero abo-hero--case">
+                <p className="services__kicker craft-in">Case studies</p>
                 <h1 className="craft-in">
-                    the files,
+                    The files,
                     <br />
                     <em>opened.</em>
                 </h1>
-                <p className="abo-hero__sub craft-in">brief. made. the file.</p>
                 <p className="abo-lead craft-in">
-                    Each file is a brief, what we made, and the work itself.
-                    Identity, reels, sites and campaigns — no stock, no invented results.
+                    Real briefs, real work. Identity, reels, sites and campaigns — no stock, no invented results.
                 </p>
                 <div className="abo-hero__chips craft-in">
-                    <span>the brief</span>
-                    <span>what we made</span>
-                    <span>the file</span>
-                    <span>real work</span>
+                    <span>Brief</span>
+                    <span>Made</span>
+                    <span>File</span>
+                    <span>Work</span>
                 </div>
                 <a className="abo-btn" href="mailto:hello@fiveps.com">Start a project</a>
-                <i className="abo-stamp" aria-hidden="true">6 files</i>
             </section>
 
             <div className="abo-tick" aria-hidden="true">
@@ -117,7 +111,7 @@ export default function CaseStudyReel() {
             </div>
 
             <section className="csf-points">
-                <p className="agency-stats__kicker craft-in">in every file</p>
+                <p className="agency-stats__kicker craft-in">In every file</p>
                 <ul className="agency-stats" aria-label="What a case study holds">
                     {POINTS.map(([title, text]) => (
                         <li key={title} className="craft-in">
@@ -158,7 +152,7 @@ export default function CaseStudyReel() {
                 >
                     <input
                         type="text"
-                        placeholder="Ask the studio anything…"
+                        placeholder="Ask the agency anything…"
                         value={ask}
                         onChange={(e) => setAsk(e.target.value)}
                     />

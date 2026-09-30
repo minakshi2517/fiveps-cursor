@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Footer from '@/components/Footer';
 
 const W = '/work/';
 const CALCULATOR = 'https://livecalculator.fivepsdigital.com/';
@@ -33,14 +34,14 @@ const CLIENTS = [
 const SHOW_CARDS = ['end-solar', 'site-home', 'poster-growth-lab', 'end-yashika', 'site-services'];
 
 const HERO_CLIPS = [
-    { src: 'video-growth-lab.mp4', poster: 'poster-growth-lab.jpg', label: 'VIDEO', start: 0.2 },
-    { src: 'video-digital-logo.mp4', poster: 'poster-digital-logo.jpg', label: 'GRAPHICS', start: 0.6 },
-    { src: 'video-growth-lab.mp4', poster: 'poster-growth-lab.jpg', label: 'VIDEO', start: 2.4 },
-    { src: 'video-digital-logo.mp4', poster: 'poster-digital-logo.jpg', label: 'GRAPHICS', start: 1.3 },
-    { src: 'video-growth-lab.mp4', poster: 'poster-growth-lab.jpg', label: 'VIDEO', start: 4.1 },
-    { src: 'video-digital-logo.mp4', poster: 'poster-digital-logo.jpg', label: 'GRAPHICS', start: 2.2 },
-    { src: 'video-growth-lab.mp4', poster: 'poster-growth-lab.jpg', label: 'VIDEO', start: 1.8 },
-    { src: 'video-digital-logo.mp4', poster: 'poster-digital-logo.jpg', label: 'GRAPHICS', start: 0.4 },
+    { src: '/work/video-growth-lab.mp4', poster: '/work/poster-growth-lab.jpg' },
+    { src: 'https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4', poster: '/work/end-solar.jpg' },
+    { src: '/work/video-digital-logo.mp4', poster: '/work/poster-digital-logo.jpg' },
+    { src: 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4', poster: '/work/end-yashika.jpg' },
+    { src: 'https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4', poster: '/work/end-nu-look.jpg' },
+    { src: 'https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4', poster: '/work/end-euler.jpg' },
+    { src: 'https://videos.pexels.com/video-files/5752729/5752729-hd_1920_1080_30fps.mp4', poster: '/work/end-anand.jpg' },
+    { src: 'https://videos.pexels.com/video-files/8064074/8064074-hd_1920_1080_25fps.mp4', poster: '/work/end-solartouch.jpg' },
 ];
 
 const HERO_REEL = [...HERO_CLIPS, ...HERO_CLIPS];
@@ -279,41 +280,39 @@ function Hero() {
                         ))}
                     </span>
                     <span className="pl-hero__line">
-                        <span className="pl-w pl-w--script"><span>creativity</span></span>
+                        <span className="pl-w pl-w--script"><span>Creativity</span></span>
+                    </span>
+                    <span className="pl-hero__line">
                         <span className="pl-w"><span>knows</span></span>
                         <span className="pl-w"><span>no</span></span>
-                        <span className="pl-w"><span>bounds</span></span>
+                        <span className="pl-w"><span>bounds.</span></span>
                     </span>
                 </h1>
                 <p className="pl-hero__sub" data-hero-fade>
-                    Strategy, design, websites, video and marketing —
+                    Strategy, ads, content, websites and design —
                     <br />
                     here’s a look at what we’ve created for real brands.
                 </p>
-                <em className="pl-hero__note" data-hero-fade>elevate your brand ↗</em>
+                <em className="pl-hero__note" data-hero-fade>Elevate your brand ↗</em>
             </div>
 
             <div className="pl-hero__stage" ref={stage} data-hero-reel>
                 {HERO_REEL.map((clip, i) => (
                     <figure
-                        key={`${clip.src}-${clip.start}-${i}`}
+                        key={`${clip.src}-${i}`}
                         className="pl-hero__card"
                         ref={(el) => { cells.current[i] = el; }}
                     >
                         <video
                             ref={(el) => { vids.current[i] = el; }}
-                            src={W + clip.src}
-                            poster={W + clip.poster}
+                            src={clip.src}
+                            poster={clip.poster}
                             muted
                             loop
                             playsInline
                             autoPlay
                             preload="metadata"
-                            onLoadedMetadata={(e) => {
-                                if (clip.start) e.currentTarget.currentTime = clip.start;
-                            }}
                         />
-                        <figcaption>{clip.label}</figcaption>
                     </figure>
                 ))}
             </div>
@@ -348,7 +347,7 @@ function Showcase() {
                     <br />
                     people remember.
                 </h2>
-                <p>One studio for the identity, the feed and the site — so everything a customer sees feels like the same brand.</p>
+                <p>One agency for the identity, the feed and the site — so everything a customer sees feels like the same brand.</p>
                 <div className="pl-row">
                     <Link href="/contact" className="pl-btn pl-btn--dark">Start a project</Link>
                     <a href="#pl-lanes" className="pl-btn pl-btn--ghost">Browse work</a>
@@ -519,7 +518,7 @@ function Story() {
                 <article className="pl-bento__card pl-bento__card--dark" data-rise>
                     <span className="pl-bento__pin"><Icon name="star" /></span>
                     <div className="pl-bento__phone">
-                        <small>FivePS studio</small>
+                        <small>FivePS agency</small>
                         <strong>Personal Branding</strong>
                         <em>Your face. Your voice.</em>
                         <span>Built into a brand people follow.</span>
@@ -629,11 +628,11 @@ function Lanes() {
                 <h2>
                     Services
                     <br />
-                    for <span className="pl-lanes__mark">every</span>
+                    For <span className="pl-lanes__mark">every</span>
                     <br />
                     stage.
                 </h2>
-                <p>From the first logo to the ads that scale it — every service, one studio.</p>
+                <p>From the first logo to the ads that scale it — every service, one agency.</p>
                 <em className="pl-lanes__note">Your Growth Partner ♡</em>
             </div>
             <div className="pl-lanes__side">
@@ -722,30 +721,6 @@ function Budget() {
                 ))}
             </a>
         </section>
-    );
-}
-
-function Footer() {
-    return (
-        <footer className="pl-foot">
-            <div className="pl-foot__brand">
-                <b>Our studio, your brand.</b>
-                <p>Identities, content, reels, websites and ads — from one team that treats your brand like its own.</p>
-            </div>
-            <nav aria-label="Pages">
-                <Link href="/services">Services</Link>
-                <Link href="/portfolio">Portfolio</Link>
-                <Link href="/case-study">Case Study</Link>
-                <Link href="/about">About</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/contact">Contact</Link>
-            </nav>
-            <nav aria-label="Reach">
-                <a href="mailto:hello@fiveps.com">hello@fiveps.com</a>
-                <a href={CALCULATOR} target="_blank" rel="noreferrer">Estimate your price <i>Live</i></a>
-            </nav>
-            <small className="pl-foot__copy">© 2026 FivePS. All rights reserved.</small>
-        </footer>
     );
 }
 

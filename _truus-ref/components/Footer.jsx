@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const STUDIO = [
+const PAGES = [
     ['Home', '/'],
     ['Services', '/services'],
     ['Portfolio', '/portfolio'],
@@ -30,23 +30,25 @@ export default function Footer() {
                     <p className="site-footer__kicker">Start a project</p>
                     <p className="site-footer__cta-title">Let’s make something.</p>
                 </div>
-                <Link href="/contact" className="site-footer__btn">Talk to the studio</Link>
+                <Link href="/contact" className="site-footer__btn">Talk to the agency</Link>
             </div>
 
             <div className="site-footer__grid">
                 <div className="site-footer__brand">
-                    <p className="site-footer__mark">FivePS</p>
+                    <p className="site-footer__mark">
+                        <img src="/fiveps-logo.png" alt="FivePS" />
+                    </p>
                     <p className="site-footer__line">
-                        Making brands internet-worthy. Strategy, design, film, and the site — from one studio.
+                        Making brands internet-worthy. Strategy, ads, content, design, and websites — from one agency.
                     </p>
                     <a className="site-footer__mail" href="mailto:hello@fiveps.com">hello@fiveps.com</a>
                     <a className="site-footer__phone" href="tel:+919350612825">+91 93506 12825</a>
                     <p className="site-footer__hours">Mon–Sat, 9am–6pm</p>
                 </div>
 
-                <nav className="site-footer__col" aria-label="Studio">
-                    <p>Studio</p>
-                    {STUDIO.map(([label, href]) => (
+                <nav className="site-footer__col" aria-label="Agency">
+                    <p>Agency</p>
+                    {PAGES.map(([label, href]) => (
                         <Link key={href} href={href}>{label}</Link>
                     ))}
                 </nav>
@@ -73,7 +75,7 @@ export default function Footer() {
                     <a href="https://livecalculator.fivepsdigital.com/" target="_blank" rel="noreferrer">
                         Price calculator
                     </a>
-                    <a href="mailto:hello@fiveps.com">Email the studio</a>
+                    <a href="mailto:hello@fiveps.com">Email the agency</a>
                 </div>
             </div>
 

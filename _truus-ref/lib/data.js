@@ -48,31 +48,31 @@ export const CARDS_DATA = [
     {
         color: 'green',
         sticker: 'megaphone',
-        title: 'marketing',
+        title: 'Marketing',
         services: ['Organic', 'Ads', 'Leads', 'Social', 'Performance']
     },
     {
         color: 'darkblue',
         sticker: 'pen',
-        title: 'design',
+        title: 'Design',
         services: ['Logo', 'Brand guides', 'Web', 'App', '3D']
     },
     {
         color: 'orange',
         sticker: 'camera',
-        title: 'photo & video',
+        title: 'Photo & video',
         services: ['Corporate', 'Product', 'Food', 'Editing']
     },
     {
         color: 'maroon',
         sticker: 'browser',
-        title: 'web',
+        title: 'Web',
         services: ['Stores', 'Landing pages', 'Apps', 'CMS']
     },
     {
         color: 'pink',
         sticker: 'bolt',
-        title: 'automation',
+        title: 'Automation',
         services: ['Workflows', 'CRM', 'Routing', 'Reporting']
     }
 ];

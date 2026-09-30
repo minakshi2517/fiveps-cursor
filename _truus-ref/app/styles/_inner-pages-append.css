@@ -540,7 +540,7 @@
 }
 
 .ask-top {
-    padding-top: 88px;
+    padding-top: 110px;
     background: var(--paper-soft, #F7F9FA);
 }
 
@@ -838,7 +838,7 @@
 
 .note-side {
     position: sticky;
-    top: 96px;
+    top: 100px;
     display: grid;
     gap: 18px;
 }
@@ -1394,7 +1394,7 @@
 }
 
 .note-side {
-    top: 88px;
+    top: 96px;
 }
 
 .note-feature {

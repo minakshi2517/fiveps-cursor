@@ -61,7 +61,7 @@ export default function CaseStudy({ piece, next }) {
                 </div>
 
                 <section className="csf-story">
-                    <p className="agency-stats__kicker craft-in">in this file</p>
+                    <p className="agency-stats__kicker craft-in">In this file</p>
                     <ul className="agency-stats">
                         <li className="craft-in">
                             <span className="agency-stats__icon" aria-hidden="true" />
@@ -83,8 +83,8 @@ export default function CaseStudy({ piece, next }) {
 
                 <section className="work cs-files" aria-label="Work from this file">
                     <div className="work__intro craft-in">
-                        <p className="work__kicker">the work</p>
-                        <h2 className="work__title">from the file</h2>
+                        <p className="work__kicker">The work</p>
+                        <h2 className="work__title">From the file</h2>
                     </div>
                     <div className="work__grid">
                         {piece.shots.map((src, i) => (
@@ -125,7 +125,7 @@ export default function CaseStudy({ piece, next }) {
                     >
                         <input
                             type="text"
-                            placeholder="Ask the studio anything…"
+                            placeholder="Ask the agency anything…"
                             value={ask}
                             onChange={(e) => setAsk(e.target.value)}
                         />

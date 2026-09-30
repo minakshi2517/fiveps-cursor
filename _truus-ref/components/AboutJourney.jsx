@@ -13,26 +13,82 @@ const YEARS = [
     ['2023', 'The system', 'Strategy, design, video and ads started running as one process, not five vendors.', 'cream'],
     ['2024', 'The momentum', 'Bigger briefs, braver ideas, and work clients could point to.', 'teal'],
     ['2025', 'The full funnel', 'Websites, automation and performance joined the mix. One roof.', 'yellow'],
-    ['2026', 'The studio', 'FivePS is a trusted digital marketing company. 250+ clients already worked with — and counting.', 'ink'],
+    ['2026', 'The agency', 'FivePS is a trusted digital marketing agency. 250+ clients already worked with — and counting.', 'ink'],
 ];
 
 const WHY = [
-    ['01', 'One founder. One roof.', 'FivePS is Pankaj’s company. The brief goes to the person who built the studio.', 'ink'],
+    ['01', 'One founder. One roof.', 'FivePS is Pankaj’s company. The brief goes to the person who built the agency.', 'ink'],
     ['02', 'The brief decides.', 'The work takes the shape the brand needs — first audience or a brand that already has one.', 'yellow'],
     ['03', '250+ brands.', 'Clinics, farms, dealerships, event studios, founders. Real work, not a moodboard.', 'teal'],
     ['04', 'Not five vendors.', 'Strategy, design, websites, video and ads sit together, so nothing feels taped on.', 'cream'],
 ];
 
 const SHOTS = [
-    ['/work/brand-fiveps.jpg', 'the mark', '-7deg'],
-    ['/work/site-home.jpg', 'the site', '5deg'],
-    ['/work/poster-growth-lab.jpg', 'the reel', '-4deg'],
-    ['/work/site-fiveps-in.jpg', 'live', '6deg'],
-    ['/work/poster-digital-logo.jpg', 'motion', '-5deg'],
-    ['/work/brand-growth-lab.jpg', 'the brand', '4deg'],
+    ['/work/brand-fiveps.jpg', 'The mark', '-4deg'],
+    ['/work/site-home.jpg', 'The site', '3deg'],
+    ['/work/poster-growth-lab.jpg', 'The reel', '-3deg'],
+    ['/work/site-fiveps-in.jpg', 'Live', '4deg'],
+    ['/work/poster-digital-logo.jpg', 'Motion', '-2deg'],
+    ['/work/brand-growth-lab.jpg', 'The brand', '3deg'],
 ];
 
-const TICK = ['one founder', 'one roof', '200+ projects', '5+ years', '96% stay', '250+ brands', 'strategy', 'design', 'film', 'the site'];
+const TICK = ['One founder', 'One roof', '200+ projects', '5+ years', '96% stay', '250+ brands', 'Strategy', 'Ads', 'Content', 'Websites'];
+
+function ShotsCarousel() {
+    const count = SHOTS.length;
+    const [index, setIndex] = useState(count);
+    const [paused, setPaused] = useState(false);
+    const [snap, setSnap] = useState(false);
+    const loop = [...SHOTS, ...SHOTS, ...SHOTS];
+
+    useEffect(() => {
+        if (paused) return undefined;
+        const timer = setInterval(() => setIndex((current) => current + 1), 2800);
+        return () => clearInterval(timer);
+    }, [paused]);
+
+    useEffect(() => {
+        if (index < count || index >= count * 2) {
+            const next = ((index % count) + count);
+            const jump = window.setTimeout(() => {
+                setSnap(true);
+                setIndex(next);
+            }, 720);
+            return () => window.clearTimeout(jump);
+        }
+        setSnap(false);
+        return undefined;
+    }, [index, count]);
+
+    const go = (dir) => setIndex((current) => current + dir);
+
+    return (
+        <div
+            className="abo-shots__carousel"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+        >
+            <div className="abo-shots__view">
+                <div
+                    className={`abo-shots__track${snap ? ' is-snap' : ''}`}
+                    style={{ transform: `translateX(calc(${index} * -18.5rem))` }}
+                >
+                    {loop.map(([src, tag, tilt], i) => (
+                        <figure key={`${src}-${i}`} style={{ '--tilt': tilt }}>
+                            <img src={src} alt="" />
+                            <figcaption>{tag}</figcaption>
+                        </figure>
+                    ))}
+                </div>
+            </div>
+            <div className="abo-shots__nav">
+                <button type="button" aria-label="Previous work" onClick={() => go(-1)}>←</button>
+                <span>{(index % count) + 1} / {count}</span>
+                <button type="button" aria-label="Next work" onClick={() => go(1)}>→</button>
+            </div>
+        </div>
+    );
+}
 
 export default function AboutJourney() {
     const root = useRef(null);
@@ -60,22 +116,22 @@ export default function AboutJourney() {
                 <i className="abo-blob abo-blob--cream" aria-hidden="true" />
                 <i className="abo-blob abo-blob--yellow" aria-hidden="true" />
                 <i className="abo-blob abo-blob--ring" aria-hidden="true" />
-                <p className="services__kicker craft-in">the studio</p>
+                <p className="services__kicker craft-in">The agency</p>
                 <h1 className="craft-in">
-                    an agency built
+                    An agency built
                     <br />
                     for the <em>work.</em>
                 </h1>
-                <p className="abo-hero__sub craft-in">one founder. one roof. no extras.</p>
+                <p className="abo-hero__sub craft-in">One founder. One roof. No extras.</p>
                 <p className="abo-lead craft-in">
-                    FivePS is Pankaj’s studio — one founder, one company, one roof.
-                    Strategy, design, film, the site and the follow-up sit together.
+                    FivePS is Pankaj’s digital marketing agency — one founder, one company, one roof.
+                    Strategy, ads, content, design and websites sit together.
                 </p>
                 <div className="abo-hero__chips craft-in">
                     <span>strategy</span>
-                    <span>design</span>
-                    <span>film</span>
-                    <span>the site</span>
+                    <span>ads</span>
+                    <span>content</span>
+                    <span>websites</span>
                 </div>
                 <a className="abo-btn" href="mailto:hello@fiveps.com">Start a project</a>
                 <i className="abo-stamp" aria-hidden="true">est. 2018</i>
@@ -90,8 +146,8 @@ export default function AboutJourney() {
             </div>
 
             <section className="abo-stats">
-                <p className="services__kicker craft-in">by the numbers</p>
-                <ul className="abo-nums" aria-label="Studio stats">
+                <p className="services__kicker craft-in">By the numbers</p>
+                <ul className="abo-nums" aria-label="Agency stats">
                     <li className="abo-nums__card abo-nums__card--yellow craft-in">
                         <b>200+</b>
                         <span>projects done</span>
@@ -109,17 +165,17 @@ export default function AboutJourney() {
 
             <section className="abo-split">
                 <div className="abo-split__copy">
-                    <p className="services__kicker">the years</p>
+                    <p className="services__kicker">The years</p>
                     <h2 className="services__title craft-in">
-                        how FivePS
+                        How FivePS
                         <br />
                         came to <em>life.</em>
                     </h2>
                     <p>
-                        2018 was a thought. 2026 is a studio.
+                        2018 was a thought. 2026 is an agency.
                         Same founder. Same roof. The work just got louder.
                     </p>
-                    <p className="abo-scribble">scroll the years ↓</p>
+                    <p className="abo-scribble">Scroll the years ↓</p>
                 </div>
                 <ol className="abo-years">
                     {YEARS.map(([year, title, text, tone], i) => (
@@ -136,7 +192,7 @@ export default function AboutJourney() {
 
             <section className="abo-why">
                 <div className="abo-why__head craft-in">
-                    <p className="services__kicker">why us</p>
+                    <p className="services__kicker">Why us</p>
                     <h2 className="qa__title">Why brands stay <em>with FivePS.</em></h2>
                 </div>
                 <ol className="abo-why__list">
@@ -152,17 +208,10 @@ export default function AboutJourney() {
 
             <section className="abo-shots">
                 <div className="abo-shots__head craft-in">
-                    <p className="work__kicker">the work</p>
-                    <h2 className="work__title">made here. <em>kept here.</em></h2>
+                    <p className="work__kicker">The work</p>
+                    <h2 className="work__title">Made here. <em>Kept here.</em></h2>
                 </div>
-                <div className="abo-shots__wall">
-                    {SHOTS.map(([src, tag, tilt], i) => (
-                        <figure key={src} data-reveal style={{ '--tilt': tilt, transitionDelay: `${i * 70}ms` }}>
-                            <img src={src} alt="" />
-                            <figcaption>{tag}</figcaption>
-                        </figure>
-                    ))}
-                </div>
+                <ShotsCarousel />
             </section>
 
             <section className="ask-help">
@@ -179,7 +228,7 @@ export default function AboutJourney() {
                 >
                     <input
                         type="text"
-                        placeholder="Ask the studio anything…"
+                        placeholder="Ask the agency anything…"
                         value={ask}
                         onChange={(e) => setAsk(e.target.value)}
                     />

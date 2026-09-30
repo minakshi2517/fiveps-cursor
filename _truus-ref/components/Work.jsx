@@ -102,7 +102,7 @@ export default function Work() {
                 <p className="work__kicker">Our work</p>
                 <h2 id="work-title" className="work__title">Work we’ve brought to life</h2>
                 <p className="work__lead">
-                    Films, graphics, pages, and sites we’ve put into the world.
+                    Campaigns, graphics, pages, and sites we’ve put into the world.
                 </p>
             </div>
             <div className="work__grid">

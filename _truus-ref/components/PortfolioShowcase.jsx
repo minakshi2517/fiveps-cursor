@@ -214,7 +214,7 @@ function ContentScene({ scene }) {
                     <span className="pfx-ig__avatar">5P</span>
                     <span className="pfx-ig__who">
                         <b>FivePS</b>
-                        <small>Created by the studio</small>
+                        <small>Created by the agency</small>
                     </span>
                     <span className="pfx-ig__dots" aria-hidden="true">•••</span>
                 </header>
@@ -430,7 +430,7 @@ export default function PortfolioShowcase() {
                 </h1>
                 <p>Websites, identities, content, campaigns and digital experiences — built to make brands move.</p>
                 <span className="pfx-intro__doodle" aria-hidden="true">
-                    <span>scroll, it moves</span>
+                    <span>Scroll, it moves</span>
                     <svg viewBox="0 0 120 110">
                         <path d="M14 10c30 4 58 18 66 44 5 17-2 32-14 34-11 2-16-12-6-20 12-10 34 0 42 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                         <path d="M95 76l8 14 12-9" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />

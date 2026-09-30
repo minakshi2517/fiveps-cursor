@@ -14,7 +14,7 @@ function Arrow() {
 function Card({ post, featured = false }) {
     const copy = (
         <div className={featured ? 'note-feature__copy' : 'note-card__copy'}>
-            <span>Studio note{post.time ? ` — ${post.time}` : ''}</span>
+            <span>Agency note{post.time ? ` — ${post.time}` : ''}</span>
             <h2>{post.title}</h2>
             {featured && <p>{post.excerpt}</p>}
             <em>
@@ -70,7 +70,7 @@ export default function BlogIndex({ posts }) {
             <aside className="note-side">
                 <h1>Blog</h1>
                 <p>
-                    Notes on marketing, design, film, sites and the work in between.
+                    Notes on marketing, ads, content, design and the work in between.
                 </p>
                 <label className="note-search">
                     Search

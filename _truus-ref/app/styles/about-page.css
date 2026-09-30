@@ -15,6 +15,20 @@
     overflow: hidden;
 }
 
+.abo-hero--case {
+    padding: 136px var(--page-pad) 64px;
+}
+
+.abo-hero--case h1 {
+    max-width: 11ch;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+}
+
+.abo-hero--case .abo-lead {
+    margin-top: 18px;
+}
+
 .abo-blob {
     position: absolute;
     pointer-events: none;
@@ -399,48 +413,51 @@
 .abo-shots__head { margin-bottom: 12px; }
 .abo-shots__head .work__title { margin: 0; }
 
-.abo-shots__wall {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    padding: 28px 8px 16px;
+.abo-shots__carousel {
+    margin-top: 28px;
 }
 
-.abo-shots__wall figure {
+.abo-shots__view {
+    overflow: hidden;
+    padding: 18px 0 8px;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.abo-shots__track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.abo-shots__track.is-snap {
+    transition: none;
+}
+
+.abo-shots__track figure {
     position: relative;
+    flex: 0 0 17rem;
     margin: 0;
     border-radius: 22px;
     overflow: hidden;
     background: #fff;
     box-shadow: 0 22px 44px -22px rgba(11, 34, 57, 0.45);
     transform: rotate(var(--tilt));
-    opacity: 0;
-    transition: opacity var(--t-reveal) var(--ease), transform 0.45s ease;
+    transition: transform 0.45s ease;
 }
 
-.abo-shots__wall figure.is-in { transform: rotate(var(--tilt)); }
-.abo-shots__wall figure.is-in:hover { transform: rotate(0deg) translateY(-8px); }
+.abo-shots__track figure:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
 
-.abo-shots__wall figure:nth-child(1) { margin-top: 18px; }
-.abo-shots__wall figure:nth-child(2) { margin-top: 0; }
-.abo-shots__wall figure:nth-child(3) { margin-top: 36px; }
-.abo-shots__wall figure:nth-child(4) { margin-top: 8px; }
-.abo-shots__wall figure:nth-child(5) { margin-top: 32px; }
-.abo-shots__wall figure:nth-child(6) { margin-top: 4px; }
-
-.abo-shots__wall img {
+.abo-shots__track img {
     display: block;
     width: 100%;
     height: 260px;
     object-fit: cover;
 }
 
-.abo-shots__wall figure:nth-child(2) img,
-.abo-shots__wall figure:nth-child(5) img { height: 300px; }
-.abo-shots__wall figure:nth-child(3) img,
-.abo-shots__wall figure:nth-child(4) img { height: 220px; }
-
-.abo-shots__wall figcaption {
+.abo-shots__track figcaption {
     position: absolute;
     left: 12px;
     bottom: 12px;
@@ -452,12 +469,46 @@
     font-size: 1.15rem;
 }
 
+.abo-shots__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.abo-shots__nav button {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.abo-shots__nav button:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.abo-shots__nav span {
+    min-width: 4.5rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
 @media (max-width: 900px) {
     .abo-stamp,
     .abo-blob { display: none; }
     .abo-split,
     .abo-why__list,
-    .abo-shots__wall,
     .abo-nums { grid-template-columns: 1fr 1fr; }
     .abo-split { grid-template-columns: 1fr; }
     .abo-split__copy { position: static; }
@@ -472,27 +523,23 @@
     .abo-why,
     .abo-shots { padding-left: 20px; padding-right: 20px; }
     .abo-why__list,
-    .abo-shots__wall,
     .abo-nums { grid-template-columns: 1fr; }
     .abo-nums__card { transform: none; min-height: 140px; }
     .abo-years__card:nth-child(odd).is-in,
     .abo-years__card:nth-child(even).is-in,
     .abo-why__card.is-in { transform: none; }
-    .abo-shots__wall figure { transform: none !important; margin-top: 0 !important; }
-    .abo-shots__wall img,
-    .abo-shots__wall figure:nth-child(2) img,
-    .abo-shots__wall figure:nth-child(3) img,
-    .abo-shots__wall figure:nth-child(4) img,
-    .abo-shots__wall figure:nth-child(5) img { height: 200px; }
+    .abo-shots__track figure { flex-basis: 14.5rem; transform: none; }
+    .abo-shots__track img { height: 200px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .abo-tick__track { animation: none; }
     .abo-years__card,
     .abo-why__card,
-    .abo-shots__wall figure {
+    .abo-shots__track figure {
         opacity: 1;
         transform: none;
+    }
         transition: none;
     }
 }

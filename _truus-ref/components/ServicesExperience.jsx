@@ -50,26 +50,19 @@ export default function ServicesExperience() {
                 <path d="M28 78c-5-8-16-3-11 6l11 9 11-9c5-9-6-14-11-6z" />
             </svg>
 
-            <Link href="/" className="sv__logo">
-                <svg className="sv__rays" viewBox="0 0 40 40" aria-hidden="true">
-                    <path d="M8 26l10-8M14 34l12-6M4 14l10-2" />
-                </svg>
-                FivePS
-                <svg className="sv__swash" viewBox="0 0 120 14" aria-hidden="true">
-                    <path d="M4 10c30-6 70-8 112-4" />
-                </svg>
-            </Link>
-
             <div className="sv__inner">
                 <header className="sv__head">
-                    <p className="sv__kicker">
+                    <Link href="/portfolio" className="sv__kicker">
                         <svg viewBox="0 0 28 28" aria-hidden="true">
                             <path d="M6 16l6-5M10 22l8-5M4 8l7-1" />
                         </svg>
-                        work
-                    </p>
+                        Work
+                        <span className="sv__kicker-go" aria-hidden="true">
+                            <svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" /></svg>
+                        </span>
+                    </Link>
                     <h1>Our <em>Services</em></h1>
-                    <p>From strategy to execution — we build digital experiences that help your brand grow.</p>
+                    <p>From strategy to ads — we run the digital marketing that helps your brand grow.</p>
 
                     <a
                         href={CALCULATOR}
@@ -77,7 +70,7 @@ export default function ServicesExperience() {
                         rel="noreferrer"
                         className="sv__calc"
                     >
-                        <span className="sv__calc-note">psst… know your budget?</span>
+                        <span className="sv__calc-note">Psst… know your budget?</span>
                         <strong>Estimate your price</strong>
                         <span className="sv__calc-sub">Pick your services, see what your business needs, live.</span>
                         <span className="sv__calc-btn">
@@ -90,7 +83,7 @@ export default function ServicesExperience() {
                 <ul className="sv__grid">
                     {SERVICES.map(([name, icon, tone], index) => (
                         <li key={name} style={{ '--i': index }}>
-                            <div className="sv__row">
+                            <Link href="/portfolio" className="sv__row">
                                 <span className={`sv__icon sv__icon--${tone}`}>
                                     <svg viewBox="0 0 24 24" aria-hidden="true">{ICONS[icon]}</svg>
                                 </span>
@@ -99,7 +92,7 @@ export default function ServicesExperience() {
                                 <b aria-hidden="true">
                                     <svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" /></svg>
                                 </b>
-                            </div>
+                            </Link>
                         </li>
                     ))}
                 </ul>
