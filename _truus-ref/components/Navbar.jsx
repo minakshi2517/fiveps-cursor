@@ -70,7 +70,6 @@ export default function Navbar() {
                             {link.label}
                         </Link>
                     ))}
-                    <Link href="/contact" className="site-nav__cta site-nav__cta--inmenu">Let’s talk</Link>
                 </div>
 
                 <div className="site-nav__end">
